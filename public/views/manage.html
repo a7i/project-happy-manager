@@ -1,0 +1,37 @@
+<px-deck context="{{context}}">
+	<px-card header-text="Manage Questions" icon="fa-briefcase">
+		<div class="layout layout--flush layout--full layout--widget" data-eq-pts="small: 600, large: 900">
+			<div class="layout__item layout__item u-5/6">
+				<h4>QUESTIONS</h4>
+			</div>
+			<div class="layout__item layout__item u-1/6">
+				<span class="float--right">
+					<button class="btn btn--large btn--tertiary btn--icon style-scope">
+						<i class="fa fa-plus"></i>
+					</button>
+				</span>
+			</div>
+		</div>
+		<div class="layout layout--flush layout--full layout--widget" data-eq-pts="small: 600, large: 900">
+			<div class="layout__item">
+				<px-data-table
+					style="width: 99%"
+					id="question-table"
+					name="QuestionTable"
+					striped
+					sortable
+					filterable
+					editable
+					table-data="{{tableData}}">
+					<px-data-table-column type="string" name="category" label="Category" filterable sortable editable></px-data-table-column>
+					<px-data-table-column type="html" name="question" label="Question" filterable sortable editable></px-data-table-column>
+					<px-data-table-column type="string" name="priority" label="Priority" filterable sortable editable></px-data-table-column>
+					<px-data-table-column type="string" name="updated" label="Updated" filterable sortable></px-data-table-column>
+					<px-data-table-column type="html" name="status" label="Status" filterable sortable editable  filter-function-name="CustomTableFilters.status">
+					</px-data-table-column>
+				</px-data-table>
+			</div>
+		</div>
+	</px-card>
+</px-deck>
+<link rel="stylesheet" type="text/css" href="css/manage.css">
